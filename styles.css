@@ -1,0 +1,298 @@
+body {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.6;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* Typography */
+h1, 
+h2,
+h3 {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    color: #143774;
+    margin-top: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+h3 {
+  color: #1792d2;
+}
+
+a {
+  color: #143774;
+}
+
+a:hover,
+a:focus {
+  color: #143774;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.article-title {
+  font-size: 1.5rem;
+}
+
+/* The logo h1 subtitle */
+.subtitle {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  color: #1792d2;
+  font-size: 0.75rem;
+  padding: 0;
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.read-more,
+.article-info {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.read-more {
+  color: #1792d2;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.read-more:hover,
+.read-more:focus {
+  color: #143774;
+  text-decoration: underline;
+}
+
+.article-info {
+  margin: 2em 0;
+}
+
+.widget-title,
+.widget-post-title {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.widget-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+}
+
+.widget-post-title {
+  color: #143774;
+}
+
+
+/* Layout */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.container-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+header {
+  text-align: center;
+  background-color: #f8f8f8;
+  padding: 1.5em 0;
+  margin-bottom: 2em;
+}
+
+footer {
+  background:#345480;
+    color: rgba(255,255,255, .65);
+    /* a = alpha */
+    /* alpha = opacity / transparency */
+  text-align: center;
+  margin-bottom: 3em 0;
+  padding: 0.5em 0;
+}
+
+@media (min-width: 675px) {
+  .container-flex {
+    flex-direction: row;
+  }
+  main {
+    width: 70%;
+  }
+  aside {
+    width: 25%;
+    min-width: 180px;
+    margin-left: 1em;
+  }
+}
+
+/* Navbar */
+nav {
+  font-family: 'Ubuntu', sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+}
+
+nav li {
+  margin-left: 2em;
+  letter-spacing: 2px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #707070;
+  font-weight: 700;
+  padding: 0.2em 0;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #1792d2;
+}
+
+.current-page {
+  border-bottom: 1px solid;
+}
+
+.current-page:hover {
+  color: #707070;
+}
+
+@media (max-width: 675px) {
+  nav ul {
+    flex-direction: column;
+  }
+  nav li {
+    margin: 0.5em 0;
+  }
+}
+
+/* Articles */
+.article-featured {
+  padding-bottom: 1em;
+  border-bottom: 1px solid #707070;
+  margin-bottom: 2em;
+}
+
+.article-recent {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 0 1em;
+  grid-template-areas: 
+    "image image"
+    "title date"
+    "body body"
+    "read-more .";
+  margin-bottom: 2em;
+}
+
+.article-image {
+  grid-area: image;
+}
+
+.article-title {
+  grid-area: title;
+}
+
+.article-info {
+  grid-area: date;
+  justify-self: end;
+}
+
+.article-body {
+  grid-area: body;
+}
+
+.read-more {
+  grid-area: read-more;
+}
+
+.article-info,
+.article-title {
+  align-self: baseline;
+}
+
+@media (min-width: 800px) {
+  .article-recent {
+    grid-template-columns: minmax(100px, 250px) 1fr;
+    grid-template-areas: 
+    "image title"
+    "image body"
+    "image read-more"
+    "date date";
+  }
+  .article-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .article-info { 
+    justify-self: start;
+  }
+}
+
+/* Sidebar */
+.sidebar-widget {
+  border: 15px solid #efefef;
+  padding: 0.75em;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-post {
+  display: flex;
+  flex-direction: column;
+  border-bottom: #707070 1px solid;
+  margin-bottom: 1em;
+}
+
+.widget-post:last-child {
+  border: 0;
+  margin: 0;
+}
+
+.widget-image {
+  order: 0;
+  height: 100px;
+  object-fit: cover;
+}
+
+.widget-post-title {
+  order: 1;
+}
+
+.widget-title {
+  order: -1;
+}
+
+/* About me page */
+.image-full {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  margin-bottom: 2em;
+}
